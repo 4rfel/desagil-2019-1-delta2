@@ -86,40 +86,20 @@ public class GateView extends FixedPanel implements ItemListener {
 
         int outputSize = gate.getOutputSize();
 
-        if(outputSize==1){
-            if (gate.read()) {
-                g.setColor(Color.RED);
-            } else {
-                g.setColor(Color.BLACK);
-            }
-            g.fillOval(BORDER + SWITCH_SIZE + GATE_WIDTH, (GATE_HEIGHT - LIGHT_SIZE) / 2, LIGHT_SIZE, LIGHT_SIZE);
-        }else{
-            int y, step;
+        int y, step;
 
-            y = -(SWITCH_SIZE / 2);
-            step = (GATE_HEIGHT / (outputSize + 1));
-
+        y = -(SWITCH_SIZE / 2);
+        step = (GATE_HEIGHT / (outputSize + 1));
+        for(int i = 0; i < outputSize; i++){
             y += step;
 
-            if (gate.read(0)) {
+            if (gate.read(i)) {
                 g.setColor(Color.RED);
             } else {
                 g.setColor(Color.BLACK);
             }
             g.fillOval(BORDER + SWITCH_SIZE + GATE_WIDTH, y, LIGHT_SIZE, LIGHT_SIZE);
-
-            y += step;
-
-            if (gate.read(1)) {
-                g.setColor(Color.RED);
-            } else {
-                g.setColor(Color.BLACK);
-            }
-            g.fillOval(BORDER + SWITCH_SIZE + GATE_WIDTH, y, LIGHT_SIZE, LIGHT_SIZE);
-
         }
-
-
 
         getToolkit().sync();
     }
