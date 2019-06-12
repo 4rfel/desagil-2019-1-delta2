@@ -1,8 +1,8 @@
 package br.pro.hashi.ensino.desagil.aps.model;
 
 public class AndGate extends Gate {
-    NandGate nandLeft;
-    NandGate nandRight;
+    private final NandGate nandLeft;
+    private final NandGate nandRight;
 
 
     public AndGate() {
