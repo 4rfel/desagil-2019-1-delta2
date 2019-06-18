@@ -15,6 +15,7 @@ public class APS {
         model.add(new AndGate());
         model.add(new XorGate());
         model.add(new DeMux());
+        model.add(new FullAdder());
 
         View view = new View(model);
 

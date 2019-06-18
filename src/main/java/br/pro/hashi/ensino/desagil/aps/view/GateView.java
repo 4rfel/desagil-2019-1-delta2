@@ -90,7 +90,7 @@ public class GateView extends FixedPanel implements ItemListener {
 
         y = -(SWITCH_SIZE / 2);
         step = (GATE_HEIGHT / (outputSize + 1));
-        for(int i = 0; i < outputSize; i++){
+        for (int i = 0; i < outputSize; i++) {
             y += step;
 
             if (gate.read(i)) {
